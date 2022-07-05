@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+header{
+    list-style: none;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 400;
+    background-color:rgb(20, 79, 37);
+    margin-top: 15px;
+    height: 60px;
+}
+
+header nav ul li{
+    margin-top: 8px;
+    letter-spacing: 3px;
+}
+
+header nav ul li a{
+    color: whitesmoke;
+}
+.nav-a:after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #8abc96;
+    display: block;
+    margin: auto;
+    transition: 0.5s ease-in-out;
+}
+
+.nav-a:hover::after{
+    width: 100%;
+}
+
+nav ul li img{
+    box-shadow: 0 0 3px 0 rgb(126, 126, 104);
+    width: 12rem;
+    height: 7rem;
+    margin-top: 10px;
+}
+main div{
+    padding: 10px;
+    line-height: 30px;
+    color: rgb(12, 12, 11);
+    margin: 10px 20px;
+    font-weight: 400;
+}
+.homePic img{
+    max-width: 800px;
+}
+
+aside, .book{
+    height: 200px;
+    width: 50%;
+    line-height: 30px;
+    border: 1px solid rgb(6, 47, 5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(20, 79, 37);
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.book h2{
+    margin-bottom: 20px;
+}
+
+.css-button{
+        width: 110px;
+        height: 40px;
+        color: #fff;
+        padding: 5px 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        border: 2px solid #e9f5df;
+        background: #206c13;
+        border-radius: 8px;
+      }
+
+ .css-button:hover {
+        background: #fff;
+        color: #888e94;
+      }
+
+.testimonials{
+    background-image: url(../media/lyle.jpg);
+    background-size: cover;
+    margin: 10px 0;
+}
+
+.gallery{
+    background-color:rgb(20, 79, 37);
+    border: 1px solid rgb(6, 47, 5);
+    color: whitesmoke;
+    height: 60px;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.info{
+    height: 150px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(20, 79, 37);
+    color: whitesmoke;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+}
+
+.toggle-button .bar{
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px){ /*If screen is less than 600px run this code*/
+    .toggle-button {
+        display: flex;
+    }
+    header nav ul{
+        height: 150px;
+        opacity: 0.6;
+    }
+    header{
+        margin-bottom: 85px;
+        height: 30px;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%; 
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-links.active{
+        display: flex;
+    }
+    
+}
+
+@media (min-width: 300px){
+    header .logo{
+        margin: 0 auto;
+        padding-top: 10px;
+        height: 6rem;
+        width: 10rem;
+    }
+    .toggle-button {
+        display: flex;
+    }
+    .homePic img{
+        width: 100%;
+        height: 60%;
+    }
+    .testimonials{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .testimonials div{
+        height: 250px; 
+        padding: 10px;
+    }
+    .testimonials img{
+        width: 28rem;
+        height: 10rem;
+        margin: 20px;
+    }
+    .img{
+        height: 500px;
+        width: 350px;
+        padding: 10px;
+    }
+    /* .navbar ul{
+        display: none;
+    } */
+    .rateAndBook{
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+    }
+    .rateAndBook aside, .rateAndBook section{
+        width: 100%;
+        margin: 3px;
+    }
+    .rateAndBook span{
+        font-size: 13px;
+    }
+    .book h2{
+        font-size: 20px;
+    }   
+    .info h4{
+        text-align: center;
+    }
+    .info{
+        font-size: 14px;
+    }
+}  
+
+
+@media (min-width: 1150px){
+    header .logo{
+        margin: 0 auto;
+        padding: 16px 0;
+        height: 9rem;
+        width: 14rem;
+    }
+    header{
+        height: 220px;
+    }
+    .navbar ul{
+        display: flex;
+    }
+    .cabinPics-container img{
+        display: flex;
+        align-items: center;
+    }
+    .rateAndBook{
+        display: flex;
+    }
+    .rateAndBook aside, .rateAndBook section{
+        width: 50rem;
+        margin-top: 30px;
+        padding: 10px;
+    }
+    .homePic img{
+        height: 30rem;
+        width: 40rem;
+    }
+    .intro-container{
+        display: flex;
+        align-items: center;
+    }
+    .introText{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+    .introText span{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .img{
+        margin: 5px;
+    }
+    .cabinPics-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .testimonials{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .testimonials img{
+        width: 30rem;
+        height: 11rem;
+        margin: 20px;
+    }
+
+}
+
+
+
+
+
+  
+
+
+
+
+
+
