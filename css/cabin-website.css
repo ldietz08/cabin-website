@@ -20,7 +20,7 @@ header nav ul{
     font-weight: 400;
     background-color:rgb(20, 79, 37);
     margin-top: 15px;
-    height: 60px;
+    min-height: 8vh;
 }
 
 header nav ul li{
@@ -81,7 +81,7 @@ aside, .book{
 }
 
 .css-button{
-        width: 110px;
+        width: 120px;
         height: 40px;
         color: #fff;
         padding: 5px 10px;
@@ -142,6 +142,7 @@ footer{
     justify-content: space-between;
     width: 25px;
     height: 18px;
+    transition: all 0.3s ease;
 }
 
 .toggle-button .bar{
@@ -159,8 +160,12 @@ footer{
 /* Media Queries */
 
 @media (max-width: 600px){ /*If screen is less than 600px run this code*/
+    body{
+        overflow-x: hidden;
+    }
     .toggle-button {
-        display: flex;
+        display: block;
+        cursor: pointer;
     }
     header nav ul{
         height: 150px;
@@ -171,25 +176,56 @@ footer{
         height: 30px;
     }
     .navbar-links {
-        display: none;
-        width: 100%; 
-    }
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 16vh;
+        width: 50%;
+        line-height: 30px;
+        padding-top: 2rem;
+        background-color: rgb(20, 79, 37);
+        transform: translateX(100%);
+        transition: 0.5s ease-in;
+        opacity: 0.8;
     }
     .navbar-links ul{
         width: 100%;
         flex-direction: column;
     }
-    .navbar-links.active{
-        display: flex;
-    }
-    
+    .navbar-links li {
+        opacity: 0;
+    } 
+
+}
+.navbar-links-active{
+    transform: translateX(0%);
 }
 
+ 
+@keyframes navLinkFase{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px,6px);
+}
+
+
 @media (min-width: 300px){
-    header .logo{
+    .logo img {
         margin: 0 auto;
         padding-top: 10px;
         height: 6rem;
@@ -221,9 +257,6 @@ footer{
         width: 350px;
         padding: 10px;
     }
-    /* .navbar ul{
-        display: none;
-    } */
     .rateAndBook{
         align-items: center;
         justify-content: center;
@@ -249,11 +282,14 @@ footer{
 
 
 @media (min-width: 1150px){
-    header .logo{
+    .logo img{
         margin: 0 auto;
         padding: 16px 0;
         height: 9rem;
         width: 14rem;
+    }
+    .toggle-button {
+        display: none;
     }
     header{
         height: 220px;
